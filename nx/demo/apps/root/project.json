@@ -1,0 +1,57 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/root/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/root",
+        "index": "apps/root/src/index.html",
+        "baseHref": "/",
+        "main": "apps/root/src/index.tsx",
+        "polyfills": "apps/root/src/polyfills.ts",
+        "tsConfig": "apps/root/tsconfig.app.json",
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "root:build",
+        "hmr": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "root:build:development"
+        },
+        "production": {
+          "buildTarget": "root:build:production",
+          "hmr": false
+        }
+      }
+    }
+  },
+  "tags": []
+}
