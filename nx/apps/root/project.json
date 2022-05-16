@@ -12,8 +12,7 @@
         "outputPath": "dist/apps/root",
         "index": "apps/root/src/index.html",
         "baseHref": "/",
-        "main": "apps/root/src/index.tsx",
-        "polyfills": "apps/root/src/polyfills.ts",
+        "main": "apps/root/src/index.js",
         "tsConfig": "apps/root/tsconfig.app.json",
         "scripts": [],
         "webpackConfig": "@nrwl/react/plugins/webpack"
