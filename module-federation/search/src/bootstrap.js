@@ -10,4 +10,8 @@ if (process.env.NODE_ENV === "development") {
   el && mount(el);
 }
 
+export const funcaoQueNaoDeveriaSerBuildada = () => {
+  console.log("oops");
+};
+
 export { mount };

@@ -2,7 +2,8 @@
   "name": "search",
   "version": "1.0.0",
   "scripts": {
-    "start": "webpack serve --config webpack.js"
+    "start": "webpack serve --config webpack.js",
+    "build": "webpack --config webpack.js"
   },
   "dependencies": {
     "react": "^17.0.2",

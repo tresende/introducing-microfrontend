@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const packageJson = require("./package.json");
 
 module.exports = {
-  mode: "development",
+  mode: "production",
   module: {
     rules: [
       {
