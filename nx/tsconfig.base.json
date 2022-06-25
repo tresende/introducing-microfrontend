@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@search/SearchApp": ["libs/search/src/index.js"]
+      "@demo/ListModule": ["libs/list/src/index.js"]
     }
   },
   "exclude": ["node_modules", "tmp"]

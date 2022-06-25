@@ -3,6 +3,6 @@
   "version": 2,
   "projects": {
     "root": "apps/root",
-    "search": "libs/search"
+    "list": "libs/list"
   }
 }

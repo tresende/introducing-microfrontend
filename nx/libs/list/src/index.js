@@ -1,6 +1,6 @@
-import Search from "./lib/search";
+import List from "./lib/list";
 
-export default Search;
+export default List;
 
 export const funcaoQueNaoDeveriaSerBuildada = () => {
   console.log("oops");
