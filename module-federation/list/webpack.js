@@ -18,27 +18,29 @@ module.exports = {
       },
     ],
   },
-  mode: "production",
+  mode: "development",
   output: {
     publicPath: "http://localhost:3001/",
   },
   devServer: {
     port: 3001,
     historyApiFallback: {
-      index: "index.html",
+      index: "index.html", //nao gera build, apenas para desenvolvimento
     },
   },
+
   plugins: [
     new ModuleFederationPlugin({
-      name: "search",
-      filename: "index.js",
+      name: "list", // nome do microfront, esse deve ser único
+      filename: "index.js", // arquivo que vai ser servido ex: http://localhost:3001/index.js
       exposes: {
-        "./SearchApp": "./src/bootstrap",
+        "./ListModule": "./src/bootstrap", // nome do modulo e qual arquivo inicial
+        // o nome list module vai ser visivel para quem usar esse microfront
       },
-      shared: packageJson.dependencies,
+      shared: packageJson.dependencies, // compartilha todas as dependencias
     }),
     new HtmlWebpackPlugin({
-      template: "./public/index.html",
+      template: "./public/index.html", //apenas para desenvolvimento
     }),
   ],
 };

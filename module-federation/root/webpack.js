@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const packageJson = require("./package.json");
 
 module.exports = {
-  mode: "production",
+  mode: "development",
   module: {
     rules: [
       {
@@ -35,7 +35,8 @@ module.exports = {
     new ModuleFederationPlugin({
       name: "root",
       remotes: {
-        search: "search@http://localhost:3001/index.js",
+        list: "list@http://localhost:3001/index.js",
+        //nome do microfront no root: nome mf configurado no mf@endereço/filename(configurado no mf)
       },
       shared: packageJson.dependencies,
     }),

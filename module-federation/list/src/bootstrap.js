@@ -4,10 +4,12 @@ import App from "./App";
 
 const mount = (el) => ReactDOM.render(<App />, el);
 
+// Se eu estiver em modo de desenvolvimento eu posso rodar
+// a aplicação complementamente isolada
+// http://localhost:3001
 if (process.env.NODE_ENV === "development") {
-  const el = document.querySelector("#search-root");
-
-  el && mount(el);
+  const el = document.querySelector("#list-root");
+  el && mount(el); //inicializa microfrontend
 }
 
 export const funcaoQueNaoDeveriaSerBuildada = () => {
